@@ -17,7 +17,7 @@
                         <th scope="row">{{ $project->id }}</th>
                         <td>{{ $project->title }}</td>
                         <td>{{ $project->slug }}</td>
-                        <td><a href="{{ route('admin.projects.show', $project->id)}}" class="btn btn-sm btn-primary">Show</a></td>
+                        <td><a href="{{ route('admin.projects.show', $project->slug)}}" class="btn btn-sm btn-primary">Show</a></td>
                     </tr>
                 @endforeach
             </tbody>
