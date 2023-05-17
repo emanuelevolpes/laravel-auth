@@ -2,6 +2,10 @@
 
 @section('content')
     <div class="container">
+        <div class="d-flex justify-content-between align-items-center p-4">
+            <h2>Projects list</h2>
+            <a href="{{ route('admin.projects.create') }}" class="btn btn-sm btn-primary">Create new project</a>
+        </div>
         <table class="table table-hover">
             <thead>
                 <tr>
