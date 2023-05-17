@@ -44,7 +44,7 @@ class ProjectController extends Controller
         $data = $request->validated();
         $project = new Project();
         $project->fill($data);
-        $project->slug = Str::slug($data['title'], '-');
+        $project->slug = Str::slug($data['title']);
         $project->save();
 
         return redirect()->route('admin.projects.index')->with('message', 'Project create!');
@@ -70,7 +70,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -82,7 +82,12 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $data = $request->validated();
+        $project->update($data);
+        $project->slug = Str::slug($data['title']);
+        $project->save();
+
+        return redirect()->route('admin.projects.index')->with('message', 'Project editated!');
     }
 
     /**
