@@ -7,7 +7,6 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Title</th>
-                    <th scope="col">Link</th>
                     <th scope="col">Slug</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -17,7 +16,6 @@
                     <tr>
                         <th scope="row">{{ $project->id }}</th>
                         <td>{{ $project->title }}</td>
-                        <td>{{ $project->project_link }}</td>
                         <td>{{ $project->slug }}</td>
                         <td><a href="{{ route('admin.projects.show', $project->id)}}" class="btn btn-sm btn-primary">Show</a></td>
                     </tr>
